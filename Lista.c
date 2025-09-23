@@ -118,3 +118,75 @@ LISTA* somentepares(LISTA* list){
     } 
     return 0;
 }   
+
+LISTA* semrepetidos(LISTA* list){
+    if (list != NULL && !listVAZIA(list)){
+        LISTA* listsemrep = criarLISTA();
+        for(int i = 0; i<list->qty ;i++){
+            bool repetido = 0;
+            for(int j = 0; j < listsemrep->qty; j++){
+                if(list->data[i] == listsemrep->data[j]){
+                    repetido = 1;
+                    break;
+                }
+            }
+            if(!repetido){
+                listsemrep->data[listsemrep->qty] = list->data[i];
+                listsemrep->qty++;
+            }
+        }
+        return listsemrep;
+    }
+    return 0;
+}
+
+LISTA* invertLISTA(LISTA* list){
+    if (list != NULL && !listVAZIA(list)){
+        LISTA* invertidinha = criarLISTA();
+        for(int i = list->qty-1 ; i >= 0; i--){
+            invertidinha->data[invertidinha->qty] = list->data[i];
+            invertidinha->qty++;
+        }
+        return invertidinha;
+    }
+    return 0;
+}
+
+void ordLISTA(LISTA* list){
+    if (list != NULL && !listVAZIA(list)){
+        for (int i = 0; i < list->qty; i++) {
+            for (int j = 0; j < list->qty - i - 1; j++) {
+                if (list->data[j] > list->data[j + 1]) {
+                    int temp = list->data[j];
+                    list->data[j] = list->data[j + 1];
+                    list->data[j + 1] = temp;
+                }
+            }
+        }
+    }   
+}
+
+LISTA* junçãoordenadaLISTA(LISTA* listx, LISTA* listy){
+    if ((listx != NULL && !listVAZIA(listx)) && (listy != NULL && !listVAZIA(listy))){
+        LISTA* ordena = semrepetidos(concLISTA(listx, listy));
+        ordLISTA(ordena);
+        return ordena;
+    }
+    return 0;
+}
+
+
+LISTA* intersecçãoLISTA(LISTA* listx, LISTA* listy){
+    if ((listx != NULL && !listVAZIA(listx)) && (listy != NULL && !listVAZIA(listy))){
+        LISTA* iguais = criarLISTA(); 
+        for(int i = 0; i < listx->qty; i++){
+            for(int j = 0; j < listy->qty; j++){
+                if(listx->data[i] == listy->data[j]){
+                    preencherLISTA_inicio(iguais, listx->data[i]);
+                }
+            }
+        }
+        return iguais;
+    }
+    return 0;
+} 

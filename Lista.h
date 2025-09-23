@@ -69,8 +69,39 @@ bool qualvalorMAIOR(LISTA* list, int* maior, int* pos);
 LISTA* somentepares(LISTA* list);
 /**
  * @param list uma lista para recolher data par
- * @return uma lista com os numeros pares da lista anterior
+ * @return ponteiro para uma lista com os numeros pares da lista anterior
  */
 
+LISTA* semrepetidos(LISTA* list);
+/**
+ * @param list uma lista para se recolher data
+ * @return ponteiro para uma lista sem numeros repetidos baseado no @param list
+ */
+
+LISTA* invertLISTA(LISTA* list);
+/**
+ * @param list uma lista para ser invertida
+ * @return ponteiro pra uma lista
+ */
+
+void ordLISTA(LISTA* list);
+/**
+ * @param list uma lista a ser ordenada
+ * @return A propia lista de forma ordenada
+ */
+
+LISTA* junçãoordenadaLISTA(LISTA* listx, LISTA* listy);
+/**
+ * @param listx uma lista a ser ordernada e combinada
+ * @param listy uma lista a ser ordernada e combinada
+ * @return ponteiro para uma lista com a junção ordenada das listas sem elementos repetidos
+ */
+
+LISTA* intersecçãoLISTA(LISTA* listx, LISTA* listy);
+/**
+ * @param listx uma lista a ser lida e ser feita a intersecção
+ * @param listy uma lista a ser lida e ser feita a intersecção
+ * @return ponteiro para uma lista com a intersecçao dos parametros 
+ */
 
 #endif
