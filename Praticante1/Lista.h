@@ -22,6 +22,13 @@ criar e retornar uma terceira lista com o resultado.
 8. Fazer uma função que realiza a interseção de duas listas ordenadas. A função deverá criar e
 retornar uma nova lista contendo o resultado.
 **/
+
+/**
+ * 
+ * 
+ * 
+ * 
+ */
 typedef struct list LISTA;
 
 
