@@ -23,6 +23,11 @@ int main(){
 
     printLISTA(oii);
     LISTA* bacana = criarLISTA();
-    char baca[] = "1900";
-    lerSTR(bacana, baca);
+    LISTA* nbaca = criarLISTA();
+    conversão (nbaca, 3);
+    conversão(bacana, 1900);
+    printLISTA(bacana);
+    ebacana(bacana);
+    printLISTA(nbaca);
+    ebacana(nbaca);
 }

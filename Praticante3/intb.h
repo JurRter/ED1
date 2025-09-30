@@ -10,5 +10,7 @@ LISTA* criarLISTA();
 bool iniLISTA(LISTA* list, int info);
 bool fimLISTA(LISTA* list, int info);
 void printLISTA(LISTA* list);
-void lerSTR(LISTA* list, int* string);
+bool ebacana(LISTA* list);
+void conversão(LISTA* list ,int numero);
+int somaBacana(int numero);
 #endif

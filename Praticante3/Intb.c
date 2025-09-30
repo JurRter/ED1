@@ -74,11 +74,39 @@ void printLISTA(LISTA* list){
     }
 }
 
-void lerSTR(LISTA* list, int* string){
-    if(list == NULL || strlen(string) = 0){
-        return;
-    }   
-    for(int pos = string[0]; pos < strlen(string); pos++){  
-
+int somaBacana(int numero){
+    int soma = 0;
+    while(numero > 0){
+        int direita;
+        direita = numero % 10;
+        soma += direita*direita;
+        numero /= 10;
     }
+    return soma;
+}
+
+void conversão(LISTA* list ,int numero){
+    if(list!=NULL){
+        while(numero != 1 && numero != 89){
+            numero = somaBacana(numero);
+            fimLISTA(list, numero);
+        }
+    }
+}
+
+bool ebacana(LISTA* list){
+    if(list != NULL){
+        NO* aux = list->inicio;
+        while (aux->prox != NULL){
+            aux = aux->prox;
+        }
+        if(aux->info == 1){
+            puts("Eh bacanaaahehe");
+            return 1;
+        } else{
+            puts(":( num e)");
+            return 1;
+        }
+    }
+    return 0;
 }
