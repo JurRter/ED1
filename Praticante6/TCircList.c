@@ -9,6 +9,7 @@ typedef struct _no {
 
 struct _list{
     TNo* inicio;
+    TNo* fim;
 };
 
 TNo* TNo_createNfill(int info){
@@ -35,19 +36,18 @@ bool TCircList_insert_end(TCircList* lista, int info){
         return false;
     if(lista->inicio == NULL){
         lista->inicio = novo;
+        lista->fim = novo;
         novo->prox = lista->inicio;
         return true;
     }
-    TNo* aux = lista->inicio;
-    while(aux->prox != lista->inicio){
-        aux = aux->prox;
-    }
-    aux->prox = novo;
+    lista->fim->prox = novo;
+    lista->fim = novo;
     novo->prox = lista->inicio;
     return true;
 }
 
 bool TCircList_insert_begin(TCircList* lista, int info){
+    if (lista == NULL) return false;
 
     TNo* novo = TNo_createNfill(info);
     if(novo == NULL) //Nao conseguimos memoria
@@ -56,12 +56,12 @@ bool TCircList_insert_begin(TCircList* lista, int info){
         lista->inicio = novo;
         novo->prox = lista->inicio;
     } else{
-        novo->prox = lista->inicio; ///// o -> 1 0 3 -> o .../// o -> 1 0 3 -> o "3" -> 1 0 3 -> o/// o -> 3 -> 1 0 3 -> o///
-        TNo* last = lista->inicio;
-        while(last->prox != lista->inicio){
-            last = last->prox;
+        novo->prox = lista->inicio;
+        TNo* ultimo = lista->inicio;
+        while(ultimo->prox != lista->inicio){
+            ultimo = ultimo->prox;
         }
-        last->prox = novo;
+        ultimo->prox = novo;
         lista->inicio = novo;
     }
     return true;
@@ -100,5 +100,12 @@ bool TCircList_try_to_delete(TCircList* lista, int info){
 }
 //TODO: Implementar esta função 
 void TCircList_free(TCircList* lista){
-    
+    if(lista != NULL){
+        TNo* aux = lista->inicio;
+        while(lista->inicio != NULL){
+            TNo* lixo = aux;
+            aux = aux->prox;
+            free(lixo);
+        }
+    }
 }
