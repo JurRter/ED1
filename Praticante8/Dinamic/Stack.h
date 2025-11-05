@@ -4,6 +4,7 @@
 
 typedef struct _stack Stack;
 
+
 Stack* Stack_create();
 /**
  * Tenta a inserção de um inteiro em uma stack.

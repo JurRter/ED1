@@ -1,4 +1,5 @@
 #include "Stack.h"
+#include <stdio.h>
 
 int main(){
     Stack* pilha = Stack_create();
