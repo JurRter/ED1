@@ -1,0 +1,42 @@
+Lista de exercícios 
+OBS: Em todas as questões, para manipulação das pilhas. Só podem ser usadas as funções implementadas no TAD.  
+
+1. Escreva um algoritmo, usando uma Pilha, que inverte as letras de cada palavra de um texto terminado por ponto (.) preservando a ordem 
+das palavras. Por exemplo, dado o texto: 
+ ESTE EXERCÍCIO É MUITO FÁCIL. 
+ A saída deve ser: 
+ ETSE OICÍCREXE É OTIUM LICÁF 
+
+2. Considere uma pilha que armazene caracteres. Escreva uma função que verifique se uma palavra É um palíndromo. 
+
+3. Escreva um programa que utilize uma pilha para verificar se expressões aritméticas estão com a parentização correta. 
+O programa deve verificar expressões para ver se cada “abre parênteses” tem um “fecha parênteses” correspondente. Ex.: 
+ Correto: ( ( ) ) – ( ( )( ) ) – ( ) ( ) 
+ Incorreto: )( – ( ( ) ( – ) ) ( ( 
+
+4. Desenvolva uma função para inverter a posição dos elementos de uma pilha P. 
+
+5. Desenvolva uma função para testar se duas pilhas P1 e P2 são iguais. 
+
+6. Desenvolva uma operação para transferir elementos de uma pilha P1 para uma pilha P2 (cópia). 
+
+7. Escreva um algoritmo que leia um número indeterminado de valores inteiros. O valor 0 (zero) finaliza a entrada de dados. Para 
+cada valor lido, determinar se ele é um número par ou ímpar. Se o número for par, então incluí-lo na FILA PAR; caso contrário, incluí-lo 
+na FILA ÍMPAR. Após o término da entrada de dados, retirar um elemento de cada fila, alternadamente (iniciando-se pela FILA ÍMPAR) até 
+que ambas as filas estejam vazias. Se o elemento retirado de uma das filas for um valor positivo, então incluí-lo em uma PILHA; 
+caso contrário, remover um elemento da PILHA. Finalmente, escrever o conteúdo da pilha. 
+
+8. Considere uma pilha P vazia e uma fila F não vazia. Utilizando apenas as funções da fila e da pilha, escreva uma função que inverta a
+ordem dos elementos da fila. 
+
+9. Como você implementaria uma fila de pilhas? 
+
+10. Escreva rotinas para implementar as operações corretas de inserção e remoção de números inteiros na pilha e de inserção e remoção de
+pilhas na fila. 
+
+11. A conversão de números inteiros, na base 10, para outras bases numéricas se dá através de sucessivas divisões de um dado valor n pelo
+valor da base na qual se queira converter. Faça um programa para obter a conversão numérica decimal para binário usando pilha.
+de acordo com a opção do usuário, utilizando a uma pilha:(a) Decimal para Binário. 
+
+12. Suponha que uma pilha possua 4 valores na seguinte ordem: 1, 2, 3 e 4.
+Qual seria a sequência correta de operações de inserção (I) e eliminação (E) para se obter os registros na ordem 2 4 3 1? 
