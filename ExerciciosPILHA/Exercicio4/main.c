@@ -9,9 +9,9 @@ int main(){
     printf("%s", input);
     Stack* pilha = Stack_create();
     for(int i = 0; i < strlen(input); i++){
-        if(!stack_push(pilha, input[i]));
+        if(!Stack_push(pilha, input[i]));
     }
-    printf("\n %s\n", inverter(input) ? "s" : "n");
+    printf("\n %s\n", inverter(pilha) ? "s" : "n");
     int temp;
     while (Stack_pop(pilha, &temp)) {
         putchar((char)temp);

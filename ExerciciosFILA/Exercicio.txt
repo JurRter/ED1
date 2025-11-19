@@ -1,0 +1,21 @@
+Filas
+Lista de exercícios
+OBS: Em todas as questões, para manipulação das filas, só podem ser usadas as funções
+implementadas no TAD.
+1. Implemente a função reverso, que reposiciona os elementos na fila de tal forma que o início
+da fila torna-se o fim, e vice-versa.
+2. Dada uma fila de inteiros, escreva um programa que exclua todos os números negativos sem
+alterar a posição dos outros elementos da fila.
+3. Faça uma função que receba três filas, duas j ́a preenchidas em ordem crescente e preencha
+a última com os valores das duas primeiras em ordem crescente.
+4. Implemente uma função que imprima os elementos de uma fila. Após a impressão a fila
+passada como parâmetro deverá permanecer do jeito que foi passado.
+5. Escreva uma função que, dado duas filas, concatene as duas filas. Retorne a fila concatenada
+em F1. F2 deve ficar vazia.
+6. Faça uma função que inverta a ordem dos elementos da fila.
+7. Faça uma função para retornar o número de elementos da fila que possuem valor ímpar.
+8. Faça uma função para retornar o número de elementos da fila que possuem valor par.
+9. Faça uma função para intercalar filas: a função recebe as duas filas e retorna a fila com os
+elementos das duas filas intercalados conforme a ordem com que elas se dispõe na fila.
+10. Dada as operações de fila insere I e remove R, escreva a configuração final da fila após as
+seguintes operações: I(10), I(20), R, I(30), I(45), I(21), R, R.

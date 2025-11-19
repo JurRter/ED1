@@ -57,7 +57,6 @@ void Stack_destroy(Stack* pilha){
 bool inverter(Stack* invertida){ 
     Stack* x = Stack_create();
     int temp;
-    
     while(Stack_pop(invertida, &temp)){
         if(!Stack_push(x, temp)){
             puts("eca");
