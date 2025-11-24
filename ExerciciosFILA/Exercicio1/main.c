@@ -13,9 +13,9 @@ int main(){
         if(!Queue_enqueue(fila1, V[i]))
             printf("Erro ao inserir o elemento V[%i]=%i\n", i, V[i]);
     }
-    int temp;
-    while(Queue_dequeue(fila1, &temp)){
-        printf("Elemento removido da Fila: %d\n", temp);
-    }
+    leitor(fila1);
+    leitor(fila1);
+    reversoSoqsoofinaleocomeso(fila1);
+    leitor(fila1);
     return 0;
 }

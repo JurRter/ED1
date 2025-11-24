@@ -1,6 +1,6 @@
 #include "Queue.h"
 #include<stdlib.h>
-
+#include <stdio.h>
 typedef struct _no {
     int info;
     struct _no *prox;
@@ -97,4 +97,34 @@ unsigned int Queue_get_qty(Queue* fila){
     if(fila)
         return fila->qty;
     return 0;
+}
+
+bool leitor(Queue* fila){
+    int temp;
+    for(int i = 0; i < fila->qty; i++){
+        Queue_dequeue(fila, &temp);
+        printf("%i ", temp);
+        Queue_enqueue(fila, temp);
+    }
+    puts("\n");
+    return 1;
+}
+
+bool reversoSoqsoofinaleocomeso(Queue* fila){
+    int temp;
+    temp = fila->end->info; 
+    Queue_enqueue(fila, temp);
+}
+
+bool reverso(Queue* fila){
+
+    int max = fila->qty;
+    int temp[max];
+    for(int i = 0; i < max; i++){
+        Queue_dequeue(fila, &temp[i]);
+    }
+    for(int i = max; i > 0; i--){
+        Queue_enqueue(fila, temp[i-1]);
+    }
+    return 1;
 }
