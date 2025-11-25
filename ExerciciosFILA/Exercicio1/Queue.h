@@ -52,5 +52,5 @@ bool reverso(Queue* fila);
 
 bool reversoSoqsoofinaleocomeso(Queue* fila);
 
-bool leitor(Queue* fila);
+void leitor(Queue* fila);
 #endif

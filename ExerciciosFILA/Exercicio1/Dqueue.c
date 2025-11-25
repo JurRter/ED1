@@ -99,7 +99,7 @@ unsigned int Queue_get_qty(Queue* fila){
     return 0;
 }
 
-bool leitor(Queue* fila){
+void leitor(Queue* fila){
     int temp;
     for(int i = 0; i < fila->qty; i++){
         Queue_dequeue(fila, &temp);
@@ -110,15 +110,43 @@ bool leitor(Queue* fila){
     return 1;
 }
 
-bool reversoSoqsoofinaleocomeso(Queue* fila){
+/* void reversoSoqsoofinaleocomeso(Queue* fila){
     int temp;
     temp = fila->end->info; 
-    Queue_enqueue(fila, temp);
+    fila->end->info = fila->end->prox->info;
+    fila->end->prox->info = temp;
+    return 1;
+} */
+
+void reversoSoqsoofinaleocomeso(Queue* fila){
+    int max = Queue_get_qty(fila);
+    int temp[max];
+    for(int i = 0; i < max; i++){
+        Queue_dequeue(fila, &temp[i]);
+    }
+    Queue_enqueue(fila, temp[max-1]);
+    for(int i = 1; i < max-1; i++){
+        Queue_enqueue(fila, temp[i]);
+    }
+    Queue_enqueue(fila, temp[0]);
 }
 
-bool reverso(Queue* fila){
+void ultimoeprima(Queue* fila){
+    int n = Queue_get_qty(fila);
+    int primeiro, ultimo, aux;
+    Queue_dequeue(fila, &primeiro);
+    for (int i = 1; i < n - 1; ++i) {
+        Queue_dequeue(fila, &aux);
+        Queue_enqueue(fila, aux); // mantém os do meio
+    }
+    Queue_dequeue(fila, &ultimo);
+    Queue_enqueue(fila, ultimo);
+    Queue_enqueue(fila, primeiro);
+}
 
-    int max = fila->qty;
+void reverso(Queue* fila){
+
+    int max = Queue_get_qty(fila);
     int temp[max];
     for(int i = 0; i < max; i++){
         Queue_dequeue(fila, &temp[i]);
@@ -126,5 +154,4 @@ bool reverso(Queue* fila){
     for(int i = max; i > 0; i--){
         Queue_enqueue(fila, temp[i-1]);
     }
-    return 1;
 }

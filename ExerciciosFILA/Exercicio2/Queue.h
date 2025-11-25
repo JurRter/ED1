@@ -47,4 +47,6 @@ bool Queue_is_empty(Queue*);
  * @return unsigned int : Quantidade de elementos presentes na fila.
  */
 unsigned int Queue_get_qty(Queue*);
+
+void leitor(Queue* fila);
 #endif

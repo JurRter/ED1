@@ -1,6 +1,6 @@
 #include "Queue.h"
 #include<stdlib.h>
-
+#include <stdio.h>
 typedef struct _no {
     int info;
     struct _no *prox;
@@ -98,3 +98,14 @@ unsigned int Queue_get_qty(Queue* fila){
         return fila->qty;
     return 0;
 }
+
+void leitor(Queue* fila){
+    int temp;
+    for(int i = 0; i < fila->qty; i++){
+        Queue_dequeue(fila, &temp);
+        printf("%i ", temp);
+        Queue_enqueue(fila, temp);
+    }
+    puts("\n");
+}
+
