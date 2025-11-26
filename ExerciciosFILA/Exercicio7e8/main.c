@@ -14,8 +14,8 @@ int main(){
             printf("Erro ao inserir o elemento V[%i]=%i\n", i, V[i]);
     }
     leitor(fila1);
-    leitor(fila1);
-    trocaultimoeprimeiro(fila1);
+    leitorinpar(fila1);
+    leitorpar(fila1);
     leitor(fila1);
     return 0;
 }

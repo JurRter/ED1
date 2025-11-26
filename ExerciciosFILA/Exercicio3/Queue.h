@@ -48,10 +48,7 @@ bool Queue_is_empty(Queue*);
  */
 unsigned int Queue_get_qty(Queue*);
 
-void reverso(Queue* fila);
-
-void reversoSoqsoofinaleocomeso(Queue* fila);
-
 void leitor(Queue* fila);
-void trocaultimoeprimeiro(Queue* lista);
+
+void somaeordena(Queue* fila1, Queue* fila2, Queue* filapreenchida);
 #endif

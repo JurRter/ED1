@@ -48,10 +48,11 @@ bool Queue_is_empty(Queue*);
  */
 unsigned int Queue_get_qty(Queue*);
 
-void reverso(Queue* fila);
+bool reverso(Queue* fila);
 
-void reversoSoqsoofinaleocomeso(Queue* fila);
+bool reversoSoqsoofinaleocomeso(Queue* fila);
 
 void leitor(Queue* fila);
-void trocaultimoeprimeiro(Queue* lista);
+void leitorpar(Queue* fila);
+void leitorinpar(Queue* fila);
 #endif

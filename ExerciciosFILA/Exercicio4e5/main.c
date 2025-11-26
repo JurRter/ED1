@@ -15,7 +15,7 @@ int main(){
     }
     leitor(fila1);
     leitor(fila1);
-    trocaultimoeprimeiro(fila1);
+    reversoSoqsoofinaleocomeso(fila1);
     leitor(fila1);
     return 0;
 }

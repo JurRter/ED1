@@ -109,59 +109,26 @@ void leitor(Queue* fila){
     puts("\n");
 }
 
-/* void reversoSoqsoofinaleocomeso(Queue* fila){
-    int temp;
-    temp = fila->end->info; 
-    fila->end->info = fila->end->prox->info;
-    fila->end->prox->info = temp;
-} */
-
-void reversoSoqsoofinaleocomeso(Queue* fila){
-    int max = Queue_get_qty(fila);
-    int temp[max];
-    for(int i = 0; i < max; i++){
-        Queue_dequeue(fila, &temp[i]);
+void somaeordena(Queue* fila1, Queue* fila2, Queue* filasoma){
+    int temp1 = 0, temp2 = 0;
+    bool tem1 = Queue_dequeue(fila1, &temp1);
+    bool tem2 = Queue_dequeue(fila2, &temp2);
+    while (tem1 && tem2){
+        if (temp1 <= temp2){
+            Queue_enqueue(filasoma, temp1);
+            tem1 = Queue_dequeue(fila1, &temp1);
+        } else {
+            Queue_enqueue(filasoma, temp2);
+            tem2 = Queue_dequeue(fila2, &temp2);
+        }
     }
-    Queue_enqueue(fila, temp[max-1]);
-    for(int i = 1; i < max-1; i++){
-        Queue_enqueue(fila, temp[i]);
+    while (tem1){
+        Queue_enqueue(filasoma, temp1);
+        tem1 = Queue_dequeue(fila1, &temp1);
     }
-    Queue_enqueue(fila, temp[0]);
-}
-
-void ultimoeprima(Queue* fila){
-    int n = Queue_get_qty(fila);
-    int primeiro, ultimo, aux;
-    Queue_dequeue(fila, &primeiro);
-    for (int i = 1; i < n - 1; ++i) {
-        Queue_dequeue(fila, &aux);
-        Queue_enqueue(fila, aux); // mantém os do meio
-    }
-    Queue_dequeue(fila, &ultimo);
-    Queue_enqueue(fila, ultimo);
-    Queue_enqueue(fila, primeiro);
-}
-
-void reverso(Queue* fila){
-
-    int max = Queue_get_qty(fila);
-    int temp[max];
-    for(int i = 0; i < max; i++){
-        Queue_dequeue(fila, &temp[i]);
-    }
-    for(int i = max; i > 0; i--){
-        Queue_enqueue(fila, temp[i-1]);
+    while (tem2){
+        Queue_enqueue(filasoma, temp2);
+        tem2 = Queue_dequeue(fila2, &temp2);
     }
 }
 
-void trocaultimoeprimeiro(Queue* lista){
-    int max = Queue_get_qty(lista);
-    int temp, primeiro;
-    Queue_dequeue(lista, &primeiro);
-    for(int i = 1; i < max-1; i++){
-        Queue_dequeue(lista, &temp);
-        Queue_enqueue(lista, temp);
-    }
-    Queue_enqueue(lista, primeiro);
-    
-}
